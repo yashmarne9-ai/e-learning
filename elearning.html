@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eduhub - Online Learning Platform | Learn with Indian Instructors</title>
+    <link rel="stylesheet" href="elearning.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">🎓 eduhub</div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#courses" class="nav-link">Courses</a>
+                <a href="#categories" class="nav-link">Categories</a>
+                <a href="#about" class="nav-link">About</a>
+                <button class="nav-link login-btn">Login</button>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Learn Anything, Anytime, Anywhere</h1>
+            <p>Master new skills with our comprehensive online courses taught by expert Indian instructors</p>
+            <div class="hero-search">
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    class="search-bar" 
+                    placeholder="Search for courses, topics..."
+                >
+                <button class="search-btn">🔍 Search</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stat-card">
+            <h3 class="stat-number">500+</h3>
+            <p class="stat-label">Courses</p>
+        </div>
+        <div class="stat-card">
+            <h3 class="stat-number">50K+</h3>
+            <p class="stat-label">Indian Students</p>
+        </div>
+        <div class="stat-card">
+            <h3 class="stat-number">200+</h3>
+            <p class="stat-label">Expert Instructors</p>
+        </div>
+        <div class="stat-card">
+            <h3 class="stat-number">24/7</h3>
+            <p class="stat-label">Support</p>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories-section" id="categories">
+        <h2>Browse by Category</h2>
+        <div class="categories-grid">
+            <div class="category-card" data-category="Web Development">
+                <div class="category-icon">🌐</div>
+                <h3>Web Development</h3>
+                <p>HTML, CSS, JavaScript, React</p>
+            </div>
+            <div class="category-card" data-category="Mobile App">
+                <div class="category-icon">📱</div>
+                <h3>Mobile App Development</h3>
+                <p>iOS, Android, Flutter</p>
+            </div>
+            <div class="category-card" data-category="Data Science">
+                <div class="category-icon">📊</div>
+                <h3>Data Science</h3>
+                <p>Python, Machine Learning, Analytics</p>
+            </div>
+            <div class="category-card" data-category="UI/UX Design">
+                <div class="category-icon">🎨</div>
+                <h3>UI/UX Design</h3>
+                <p>Figma, Design Principles</p>
+            </div>
+            <div class="category-card" data-category="Cloud Computing">
+                <div class="category-icon">☁️</div>
+                <h3>Cloud Computing</h3>
+                <p>AWS, Azure, GCP</p>
+            </div>
+            <div class="category-card" data-category="Cybersecurity">
+                <div class="category-icon">🔒</div>
+                <h3>Cybersecurity</h3>
+                <p>Network Security, Encryption</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="courses-section" id="courses">
+        <h2>Featured Courses</h2>
+        <div class="filter-controls">
+            <input 
+                type="text" 
+                id="courseSearch" 
+                class="course-search" 
+                placeholder="Search courses..."
+            >
+            <select id="categoryFilter" class="category-select">
+                <option value="">All Categories</option>
+                <option value="Web Development">Web Development</option>
+                <option value="Mobile App">Mobile App</option>
+                <option value="Data Science">Data Science</option>
+                <option value="UI/UX Design">UI/UX Design</option>
+                <option value="Cloud Computing">Cloud Computing</option>
+                <option value="Cybersecurity">Cybersecurity</option>
+            </select>
+            <select id="priceFilter" class="price-select">
+                <option value="">All Prices</option>
+                <option value="free">Free</option>
+                <option value="paid">Paid</option>
+            </select>
+        </div>
+        <div class="courses-grid" id="coursesGrid">
+            <!-- Courses will be populated here by JavaScript -->
+        </div>
+    </section>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content login-modal">
+            <span class="close">&times;</span>
+            <div class="login-container">
+                <div class="login-box">
+                    <h2>Welcome Back!</h2>
+                    <p class="login-subtitle">Sign in to continue learning</p>
+                    <form id="loginForm">
+                        <div class="form-group">
+                            <label for="loginEmail">Email Address</label>
+                            <input 
+                                type="email" 
+                                id="loginEmail" 
+                                placeholder="your.email@example.com" 
+                                required
+                            >
+                        </div>
+                        <div class="form-group">
+                            <label for="loginPassword">Password</label>
+                            <input 
+                                type="password" 
+                                id="loginPassword" 
+                                placeholder="Enter your password" 
+                                required
+                            >
+                        </div>
+                        <div class="form-group checkbox">
+                            <input type="checkbox" id="rememberMe">
+                            <label for="rememberMe">Remember me</label>
+                        </div>
+                        <button type="submit" class="login-submit-btn">Sign In</button>
+                    </form>
+                    <div class="login-footer">
+                        <p>Don't have an account? <a href="#" class="register-link">Sign up now</a></p>
+                        <p><a href="#" class="forgot-password">Forgot password?</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Course Detail Modal -->
+    <div id="courseModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-body">
+                <div id="modalImage" class="modal-image"></div>
+                <div class="modal-info">
+                    <h2 id="modalTitle"></h2>
+                    <div class="modal-meta">
+                        <span id="modalInstructor" class="instructor-badge"></span>
+                        <span id="modalRating" class="rating-badge"></span>
+                    </div>
+                    <p id="modalDescription"></p>
+                    <div class="modal-stats">
+                        <div>
+                            <strong>Price:</strong>
+                            <span id="modalPrice"></span>
+                        </div>
+                        <div>
+                            <strong>Duration:</strong>
+                            <span id="modalDuration"></span>
+                        </div>
+                        <div>
+                            <strong>Students:</strong>
+                            <span id="modalStudents"></span>
+                        </div>
+                        <div>
+                            <strong>Level:</strong>
+                            <span id="modalLevel"></span>
+                        </div>
+                    </div>
+                    <div class="modal-skills">
+                        <h3>Skills You'll Learn:</h3>
+                        <ul id="modalSkills"></ul>
+                    </div>
+                    <button class="enroll-btn">Enroll Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <h2>Student Testimonials</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p>"eduhub helped me land my dream job! The courses are comprehensive, well-structured, and taught by industry experts. Highly recommend!"</p>
+                <h4>Raj Kumar</h4>
+                <p class="role">Web Developer, Bangalore</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p>"Excellent instructors and amazing community support. The learning experience was exceptional. My salary doubled after completing the course!"</p>
+                <h4>Priya Sharma</h4>
+                <p class="role">Data Scientist, Delhi</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p>"The UI/UX design course completely transformed my career. I got placed in a top company within 3 months. Worth every penny!"</p>
+                <h4>Anaya Patel</h4>
+                <p class="role">UX Designer, Mumbai</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <h2>Stay Updated</h2>
+        <p>Subscribe to get the latest courses and learning tips</p>
+        <div class="newsletter-form">
+            <input 
+                type="email" 
+                id="emailInput" 
+                placeholder="Enter your email" 
+                required
+            >
+            <button class="subscribe-btn">Subscribe</button>
+        </div>
+        <div id="subscribeMessage" class="message"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About eduhub</h4>
+                <p>Empowering Indian learners with quality education and expert instruction.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#courses">Browse Courses</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#" class="social-icon">f</a>
+                    <a href="#" class="social-icon">𝕏</a>
+                    <a href="#" class="social-icon">in</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 eduhub. All rights reserved. Made with ❤️ in India</p>
+        </div>
+    </footer>
+
+    <script src="elearning.js"></script>
+</body>
+</html>
